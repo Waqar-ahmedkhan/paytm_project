@@ -1,8 +1,32 @@
-# React + Vite
+# Paytm Project - MERN Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This MERN (MongoDB, Express.js, React.js, Node.js) stack project simulates a basic Paytm-like application. Users can sign in, sign up, create an account, and transfer money from one person to another.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- User Authentication (Sign Up, Sign In)
+- Account Creation
+- Money Transfer Functionality
+
+## Technologies Used
+
+- MongoDB: Database for storing user and transaction data
+- Express.js: Backend server framework
+- React.js: Frontend user interface
+- Node.js: Backend JavaScript runtime
+- ...
+
+## Prerequisites
+
+- Node.js and npm installed
+- MongoDB installed and running
+
+## Setup
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Waqar-ahmedkhan/paytm_project.git
+   cd paytm_project
+   ```
