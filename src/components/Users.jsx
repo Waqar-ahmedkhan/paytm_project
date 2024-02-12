@@ -9,13 +9,22 @@ export const Users = () => {
   const [filter, setFilter] = useState("");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/v1/user/bulk?filter=" + filter)
-      .then((response) => {
-        setUsers(response.data.user);
-      });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:4000/api/v1/user/bulk?filter=${filter}`
+        );
+        console.log("Response:", response.data); // Log the response data
+        setUsers(response.data.users);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchData();
   }, [filter]);
 
+  console.log("Users:", users);
   return (
     <>
       <div className="font-bold mt-6 text-lg">Users</div>
@@ -30,9 +39,13 @@ export const Users = () => {
         ></input>
       </div>
       <div>
-        {users.map((user) => (
-          <User user={user} />
-        ))}
+        <div>
+          {users ? (
+            users.map((user) => <User key={user._id} user={user} />)
+          ) : (
+            <p>No users available.</p>
+          )}
+        </div>
       </div>
     </>
   );
